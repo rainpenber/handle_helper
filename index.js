@@ -74,9 +74,16 @@ const match = (idiom, hint) => {
     // 检查黄色条件
     // 检查是否有黄色拼音
     if (yellowChars && yellowChars.length > 0) {
+        let count = 0;
         for (let char of yellowChars) {
-            if (charSet.indexOf(char) < 0) { return false }
+            for (let el of charSet) {
+                if (el.indexOf(char) > -1) {
+                    count += 1;
+                    break;
+                }
+            }
         }
+        if (count < 1) { return false }
     }
     // 检查是否有黄色音调
     if (yellowTones && yellowTones.length > 0) {
