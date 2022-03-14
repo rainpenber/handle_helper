@@ -19,23 +19,35 @@ node ./index.js
 ## 如何填入给出的提示
 ```javascript
 const hint = {
- // 绿色提示 char 提示的拼音 没有请写""或者null tone是音调 没有请写null place是自然阅读位置 1~4
-    green: [
+ // 绿色提示 hanzi 汉字 char 拼音 tone音调 没有请写null place是自然阅读位置 1~4
+   green: [
         {
-            char: "xin",
-            tone: 1,
-            place: 3
+            char: "u",
+            tone: 4,
+            place: 1
         },
         {
             char: null,
-            tone: 1,
-            place: 4
-        }
+            tone: 4,
+            place: 1
+        },
+        {
+            hanzi: "徐",
+            tone: 4,
+            place: 1
+        },
     ],
-    // 黄色提示 以array保存
+    // 黄色提示 按照数组保存
     yellow: {
-        char: ["ing"],
-        tone: [3]
+        hanzi: [],
+        char: [],
+        tone: []
+    },
+    // 灰色提示 按照数组保存
+    not: {
+        hanzi: ["非", "物", "是", "人"],
+        char: ["w","ren"],
+        tone: null
     }
 }
 ```
